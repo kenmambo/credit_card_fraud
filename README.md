@@ -5,12 +5,14 @@
 ![Framework](https://img.shields.io/badge/Streamlit-1.0.0-orange)
 
 A machine learning system for detecting fraudulent credit card transactions using:
+
 - XGBoost classifier (primary model)
 - Isolation Forest (secondary model)
 
 ## Features
 
 ### API Endpoints
+
 | Endpoint | Method | Description |
 |----------|--------|-------------|
 | `/predict` | POST | Make single fraud prediction |
@@ -20,6 +22,7 @@ A machine learning system for detecting fraudulent credit card transactions usin
 | `/data/stats` | GET | Get dataset statistics |
 
 ### Dashboard Features
+
 - Interactive transaction simulation
 - Real-time fraud prediction
 - Model comparison
@@ -29,16 +32,19 @@ A machine learning system for detecting fraudulent credit card transactions usin
 ## Setup
 
 1. **Install dependencies**:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 2. **Run the API**:
+
 ```bash
 uv run python app/api.py
 ```
 
 3. **Run the dashboard**:
+
 ```bash
 streamlit run app/dashboard.py
 ```
@@ -48,11 +54,13 @@ streamlit run app/dashboard.py
 The system uses two machine learning models:
 
 ### XGBoost Classifier
+
 - Primary fraud detection model
 - Probability threshold: 0.5
 - Features: PCA-transformed transaction data
 
 ### Isolation Forest
+
 - Anomaly detection model
 - Used as secondary verification
 - Features: PCA-transformed transaction data
@@ -60,6 +68,7 @@ The system uses two machine learning models:
 ## Data
 
 The models were trained on the [Credit Card Fraud Detection dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud) containing:
+
 - 284,807 transactions
 - 492 fraud cases (0.172% of all transactions)
 - 30 numerical features (V1-V28, Time, Amount)
@@ -102,6 +111,7 @@ This system processes transactions in under 100ms, enabling real-time protection
 ## GitHub Setup
 
 1. **Initialize repository**:
+
 ```bash
 git init
 git add .
@@ -113,6 +123,7 @@ git commit -m "Initial commit"
    - Create new repository (don't initialize with README)
 
 3. **Connect and push**:
+
 ```bash
 git remote add origin https://github.com/your-username/credit-card-fraud-detection.git
 git push -u origin main
