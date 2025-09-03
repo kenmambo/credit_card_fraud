@@ -19,7 +19,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install cython==0.29.33
+        pip install scikit-learn==1.2.2
         pip install -r requirements.txt
+    - name: Clean build artifacts
+      run: |
+        find . -name "*.c" -delete
+        find . -name "*.so" -delete
     - name: Run tests
       run: |
         pytest
